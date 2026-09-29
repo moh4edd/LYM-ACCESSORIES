@@ -77,13 +77,11 @@
 </head>
 <body class="bg-lym-cream text-lym-brown antialiased flex flex-col min-h-screen relative">
 
-  <!-- TOP ANNOUNCEMENT BAR -->
   <div class="bg-lym-brown text-lym-nude text-xs sm:text-sm py-2.5 px-4 text-center font-medium tracking-wide flex items-center justify-center gap-2">
     <span>🎓</span>
     <span><strong>LIVRAISON GRATUITE</strong> disponible à l'<strong>USTHB (Bab Ezzouar)</strong> &amp; à l'école <strong>ESAA</strong> !</span>
   </div>
 
-  <!-- HEADER & NAVIGATION -->
   <header class="sticky top-0 z-30 bg-lym-cream/95 backdrop-blur-md border-b border-lym-nude/60 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
@@ -105,12 +103,12 @@
 
       <!-- Desktop Navigation Menu -->
       <nav class="hidden lg:flex items-center space-x-5 text-xs font-semibold tracking-widest uppercase text-lym-brown">
-        <a href="#hero" class="hover:text-lym-accent transition-colors py-2 uppercase font-semibold cursor-pointer">Accueil</a>
-        <button onclick="scrollToCatalogAndFilter('bagues')" class="hover:text-lym-accent transition-colors py-2 uppercase font-semibold cursor-pointer">Bagues</button>
-        <button onclick="scrollToCatalogAndFilter('colliers')" class="hover:text-lym-accent transition-colors py-2 uppercase font-semibold cursor-pointer">Colliers</button>
-        <button onclick="scrollToCatalogAndFilter('bracelets')" class="hover:text-lym-accent transition-colors py-2 uppercase font-semibold cursor-pointer">Bracelets</button>
-        <button onclick="scrollToCatalogAndFilter('montres')" class="hover:text-lym-accent transition-colors py-2 uppercase font-semibold cursor-pointer">Montres</button>
-        <button onclick="scrollToCatalogAndFilter('packs')" class="hover:text-lym-accent transition-colors py-2 uppercase font-semibold cursor-pointer">Packs (4 pcs)</button>
+        <a href="#hero" class="hover:text-lym-accent transition-colors py-2 uppercase font-semibold cursor-pointer flex items-center gap-1.5"><i class="fa-solid fa-house text-[11px]"></i> Accueil</a>
+        <button onclick="scrollToCatalogAndFilter('bagues')" class="hover:text-lym-accent transition-colors py-2 uppercase font-semibold cursor-pointer flex items-center gap-1.5"><i class="fa-solid fa-ring text-[11px]"></i> Bagues</button>
+        <button onclick="scrollToCatalogAndFilter('colliers')" class="hover:text-lym-accent transition-colors py-2 uppercase font-semibold cursor-pointer flex items-center gap-1.5"><i class="fa-solid fa-gem text-[11px]"></i> Colliers</button>
+        <button onclick="scrollToCatalogAndFilter('bracelets')" class="hover:text-lym-accent transition-colors py-2 uppercase font-semibold cursor-pointer flex items-center gap-1.5"><i class="fa-solid fa-link text-[11px]"></i> Bracelets</button>
+        <button onclick="scrollToCatalogAndFilter('montres')" class="hover:text-lym-accent transition-colors py-2 uppercase font-semibold cursor-pointer flex items-center gap-1.5"><i class="fa-solid fa-clock text-[11px]"></i> Montres</button>
+        <button onclick="scrollToCatalogAndFilter('packs')" class="hover:text-lym-accent transition-colors py-2 uppercase font-semibold cursor-pointer flex items-center gap-1.5"><i class="fa-solid fa-gift text-[11px]"></i> Packs (4 pcs)</button>
       </nav>
 
       <!-- Header Right Actions & Cart -->
@@ -137,24 +135,23 @@
 
     <!-- Mobile Navigation Drawer -->
     <div id="mobile-menu" class="hidden lg:hidden bg-lym-softNude border-b border-lym-nude/60 px-6 py-4 space-y-3">
-      <a href="#hero" onclick="toggleMobileMenu()" class="block text-sm font-semibold tracking-wider uppercase py-2 border-b border-lym-nude/30 cursor-pointer">Accueil</a>
-      <button onclick="scrollToCatalogAndFilter('all'); toggleMobileMenu()" class="block w-full text-left text-sm font-semibold tracking-wider uppercase py-2 border-b border-lym-nude/30 cursor-pointer">✨ Tout Le Catalogue</button>
-      <button onclick="scrollToCatalogAndFilter('bagues'); toggleMobileMenu()" class="block w-full text-left text-sm font-semibold tracking-wider uppercase py-2 border-b border-lym-nude/30 cursor-pointer">💍 Bagues</button>
-      <button onclick="scrollToCatalogAndFilter('colliers'); toggleMobileMenu()" class="block w-full text-left text-sm font-semibold tracking-wider uppercase py-2 border-b border-lym-nude/30 cursor-pointer">📿 Colliers</button>
-      <button onclick="scrollToCatalogAndFilter('bracelets'); toggleMobileMenu()" class="block w-full text-left text-sm font-semibold tracking-wider uppercase py-2 border-b border-lym-nude/30 cursor-pointer">✨ Bracelets</button>
-      <button onclick="scrollToCatalogAndFilter('montres'); toggleMobileMenu()" class="block w-full text-left text-sm font-semibold tracking-wider uppercase py-2 border-b border-lym-nude/30 cursor-pointer">⌚ Montres</button>
-      <button onclick="scrollToCatalogAndFilter('packs'); toggleMobileMenu()" class="block w-full text-left text-sm font-semibold tracking-wider uppercase py-2 border-b border-lym-nude/30 cursor-pointer">🎁 Packs 4 Pièces</button>
+      <a href="#hero" onclick="toggleMobileMenu()" class="block text-sm font-semibold tracking-wider uppercase py-2 border-b border-lym-nude/30 cursor-pointer flex items-center gap-2"><i class="fa-solid fa-house"></i> Accueil</a>
+      <button onclick="scrollToCatalogAndFilter('all'); toggleMobileMenu()" class="block w-full text-left text-sm font-semibold tracking-wider uppercase py-2 border-b border-lym-nude/30 cursor-pointer flex items-center gap-2"><i class="fa-solid fa-border-all"></i> Tout Le Catalogue</button>
+      <button onclick="scrollToCatalogAndFilter('bagues'); toggleMobileMenu()" class="block w-full text-left text-sm font-semibold tracking-wider uppercase py-2 border-b border-lym-nude/30 cursor-pointer flex items-center gap-2"><i class="fa-solid fa-ring"></i> Bagues</button>
+      <button onclick="scrollToCatalogAndFilter('colliers'); toggleMobileMenu()" class="block w-full text-left text-sm font-semibold tracking-wider uppercase py-2 border-b border-lym-nude/30 cursor-pointer flex items-center gap-2"><i class="fa-solid fa-gem"></i> Colliers</button>
+      <button onclick="scrollToCatalogAndFilter('bracelets'); toggleMobileMenu()" class="block w-full text-left text-sm font-semibold tracking-wider uppercase py-2 border-b border-lym-nude/30 cursor-pointer flex items-center gap-2"><i class="fa-solid fa-link"></i> Bracelets</button>
+      <button onclick="scrollToCatalogAndFilter('montres'); toggleMobileMenu()" class="block w-full text-left text-sm font-semibold tracking-wider uppercase py-2 border-b border-lym-nude/30 cursor-pointer flex items-center gap-2"><i class="fa-solid fa-clock"></i> Montres</button>
+      <button onclick="scrollToCatalogAndFilter('packs'); toggleMobileMenu()" class="block w-full text-left text-sm font-semibold tracking-wider uppercase py-2 border-b border-lym-nude/30 cursor-pointer flex items-center gap-2"><i class="fa-solid fa-gift"></i> Packs 4 Pièces</button>
     </div>
   </header>
 
-  <!-- HERO BANNER SECTION -->
   <section id="hero" class="relative w-full bg-lym-brown text-lym-nude overflow-hidden z-10">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 items-center min-h-[480px]">
       
       <!-- Left Content -->
       <div class="md:col-span-7 px-6 py-12 lg:px-12 flex flex-col justify-center space-y-6">
-        <h1 class="font-serif-title italic text-4xl sm:text-5xl lg:text-6xl font-normal leading-snug tracking-wide text-white">
-          Little details, big impact
+        <h1 class="font-serif-title italic text-2xl sm:text-4xl lg:text-5xl font-normal leading-tight tracking-wide text-white whitespace-nowrap">
+          « little details, big impact »
         </h1>
 
         <p class="text-xs sm:text-sm text-lym-nude/80 max-w-xl leading-relaxed">
@@ -180,7 +177,7 @@
         </div>
       </div>
 
-      <!-- Right Hero Banner Image (Properly Contained & Optimized) -->
+      <!-- Right Hero Banner Image -->
       <div class="md:col-span-5 p-4 md:p-6 flex items-center justify-center bg-lym-darkBrown/30 border-t md:border-t-0 md:border-l border-lym-nude/10 min-h-[320px] sm:min-h-[400px]">
         <div class="relative w-full flex items-center justify-center overflow-hidden rounded-2xl border border-lym-nude/30 shadow-2xl bg-[#2C1811] p-2 group">
           <img src="photo_2026-09-29 15.19.20.jpeg" 
@@ -198,26 +195,23 @@
     </div>
   </section>
 
-  <!-- CATEGORY FILTER BUTTONS BAR -->
-  <section id="catalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-4 w-full relative z-10 scroll-mt-24">
+  <section id="catalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-4 w-full relative z-10 scroll-mt-20">
     <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 text-xs font-bold uppercase tracking-wider">
       <button data-cat="all" onclick="filterCategory('all')" class="cat-btn bg-lym-brown text-lym-nude border border-lym-brown px-6 py-2.5 rounded-full whitespace-nowrap cursor-pointer transition-all duration-200 shadow-sm">Tout voir</button>
-      <button data-cat="bagues" onclick="filterCategory('bagues')" class="cat-btn bg-white text-lym-brown hover:bg-lym-nude border border-lym-nude/60 px-6 py-2.5 rounded-full whitespace-nowrap cursor-pointer transition-all duration-200">💍 Bagues</button>
-      <button data-cat="colliers" onclick="filterCategory('colliers')" class="cat-btn bg-white text-lym-brown hover:bg-lym-nude border border-lym-nude/60 px-6 py-2.5 rounded-full whitespace-nowrap cursor-pointer transition-all duration-200">📿 Colliers</button>
-      <button data-cat="bracelets" onclick="filterCategory('bracelets')" class="cat-btn bg-white text-lym-brown hover:bg-lym-nude border border-lym-nude/60 px-6 py-2.5 rounded-full whitespace-nowrap cursor-pointer transition-all duration-200">✨ Bracelets</button>
-      <button data-cat="montres" onclick="filterCategory('montres')" class="cat-btn bg-white text-lym-brown hover:bg-lym-nude border border-lym-nude/60 px-6 py-2.5 rounded-full whitespace-nowrap cursor-pointer transition-all duration-200">⌚ Montres</button>
-      <button data-cat="packs" onclick="filterCategory('packs')" class="cat-btn bg-white text-lym-brown hover:bg-lym-nude border border-lym-nude/60 px-6 py-2.5 rounded-full whitespace-nowrap cursor-pointer transition-all duration-200">🎁 Packs (4 PCS)</button>
+      <button data-cat="bagues" onclick="filterCategory('bagues')" class="cat-btn bg-white text-lym-brown hover:bg-lym-nude border border-lym-nude/60 px-6 py-2.5 rounded-full whitespace-nowrap cursor-pointer transition-all duration-200"><i class="fa-solid fa-ring mr-1.5"></i> Bagues</button>
+      <button data-cat="colliers" onclick="filterCategory('colliers')" class="cat-btn bg-white text-lym-brown hover:bg-lym-nude border border-lym-nude/60 px-6 py-2.5 rounded-full whitespace-nowrap cursor-pointer transition-all duration-200"><i class="fa-solid fa-gem mr-1.5"></i> Colliers</button>
+      <button data-cat="bracelets" onclick="filterCategory('bracelets')" class="cat-btn bg-white text-lym-brown hover:bg-lym-nude border border-lym-nude/60 px-6 py-2.5 rounded-full whitespace-nowrap cursor-pointer transition-all duration-200"><i class="fa-solid fa-link mr-1.5"></i> Bracelets</button>
+      <button data-cat="montres" onclick="filterCategory('montres')" class="cat-btn bg-white text-lym-brown hover:bg-lym-nude border border-lym-nude/60 px-6 py-2.5 rounded-full whitespace-nowrap cursor-pointer transition-all duration-200"><i class="fa-solid fa-clock mr-1.5"></i> Montres</button>
+      <button data-cat="packs" onclick="filterCategory('packs')" class="cat-btn bg-white text-lym-brown hover:bg-lym-nude border border-lym-nude/60 px-6 py-2.5 rounded-full whitespace-nowrap cursor-pointer transition-all duration-200"><i class="fa-solid fa-gift mr-1.5"></i> Packs (4 PCS)</button>
     </div>
   </section>
 
-  <!-- PRODUCTS GRID CATALOGUE -->
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 flex-1 w-full relative z-10">
     <div id="products-grid" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-      <!-- Généré par JavaScript -->
+      <!-- Generated dynamically by JavaScript -->
     </div>
   </main>
 
-  <!-- SHOPPING CART DRAWER -->
   <div id="cart-drawer" class="hidden fixed inset-0 z-50">
     <!-- Overlay Backdrop -->
     <div onclick="closeCart()" class="absolute inset-0 bg-black/60 backdrop-blur-sm cursor-pointer"></div>
@@ -260,17 +254,17 @@
             </div>
           </div>
 
-          <!-- Shipping Options (69 Wilayas of Algeria) -->
+          <!-- Shipping Options -->
           <div class="space-y-1">
             <label class="block text-[11px] font-bold uppercase tracking-wider text-lym-brown">Lieu de livraison :</label>
             <select id="shipping-option" onchange="updateShippingFee()" class="w-full text-xs font-medium border border-lym-nude/60 rounded-xl p-2.5 bg-lym-cream">
               <optgroup label="Retrait / Gratuit">
-                <option value="usthb">🎓 USTHB (Bab Ezzouar) - GRATUIT (0 DA)</option>
-                <option value="esaa">🎓 École Privée ESAA - GRATUIT (0 DA)</option>
+                <option value="usthb">USTHB (Bab Ezzouar) - GRATUIT (0 DA)</option>
+                <option value="esaa">École Privée ESAA - GRATUIT (0 DA)</option>
               </optgroup>
               <optgroup label="À domicile & Wilayas">
-                <option value="alger">🏠 À domicile (Alger) (+ 400 DA)</option>
-                <option value="wilaya">🚚 Autre Wilaya (+ 600 DA)</option>
+                <option value="alger">À domicile (Alger) (+ 400 DA)</option>
+                <option value="wilaya">Autre Wilaya (+ 600 DA)</option>
               </optgroup>
               <optgroup label="Toutes les Wilayas d'Algérie (69 Wilayas)">
                 <option value="w_adrar">01 - Adrar (+ 600 DA)</option>
@@ -365,7 +359,6 @@
     </div>
   </div>
 
-  <!-- TOAST NOTIFICATION OVERLAY -->
   <div id="toast-notification" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
     <div class="bg-lym-brown text-lym-nude px-5 py-3.5 rounded-2xl shadow-xl flex items-center space-x-3 border border-lym-nude/30">
       <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
@@ -373,7 +366,6 @@
     </div>
   </div>
 
-  <!-- IMAGE LIGHTBOX MODAL -->
   <div id="image-modal" onclick="closeImageModal()" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md transition-all cursor-pointer">
     <div class="relative max-w-4xl w-full max-h-[90vh] flex flex-col items-center justify-center" onclick="event.stopPropagation()">
       <button onclick="closeImageModal()" class="absolute -top-10 right-0 text-white hover:text-lym-nude text-2xl p-2 cursor-pointer transition-colors" aria-label="Fermer">
@@ -384,7 +376,6 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer class="bg-lym-brown text-lym-nude py-10 border-t border-lym-nude/20 text-xs relative z-10">
     <div class="max-w-7xl mx-auto px-4 text-center space-y-3">
       <p class="font-serif-title font-bold text-lg tracking-widest uppercase text-white">LYM ACCESSORIES</p>
@@ -403,7 +394,6 @@
     </div>
   </footer>
 
-  <!-- JAVASCRIPT APP LOGIC -->
   <script>
     const products = [
       // BAGUES
@@ -448,7 +438,7 @@
         const card = document.createElement('div');
         card.className = "bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md border border-lym-nude/40 flex flex-col justify-between group";
         card.innerHTML = `
-          <div class="relative aspect-square overflow-hidden bg-lym-cream">
+          <div class="relative aspect-square overflow-hidden bg-lym-cream cursor-pointer" onclick="openImageModal('${product.image}', '${product.name}')">
             <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='${product.fallback}'">
             <span class="absolute top-2.5 left-2.5 bg-lym-brown/80 text-lym-nude text-[9px] font-bold px-2.5 py-1 rounded-full uppercase tracking-widest backdrop-blur-md">${product.category}</span>
           </div>
@@ -457,7 +447,7 @@
               <h3 class="font-serif-title text-sm sm:text-base font-bold text-lym-brown line-clamp-1">${product.name}</h3>
               <p class="text-xs sm:text-sm font-extrabold text-lym-accent mt-0.5">${product.price} DA</p>
             </div>
-            <button onclick="addToCart(${product.id})" class="w-full bg-lym-brown text-lym-nude hover:bg-lym-darkBrown font-bold py-2.5 rounded-xl transition-all text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm cursor-pointer active:scale-95">
+            <button onclick="event.stopPropagation(); addToCart(${product.id})" class="w-full bg-lym-brown text-lym-nude hover:bg-lym-darkBrown font-bold py-2.5 rounded-xl transition-all text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm cursor-pointer active:scale-95">
               <i class="fa-solid fa-cart-plus"></i>
               <span>Ajouter</span>
             </button>
@@ -470,7 +460,6 @@
     function filterCategory(cat) {
       renderProducts(cat);
 
-      // Met à jour les styles des boutons de filtre : le bouton actif est marron, les autres (y compris Tout voir) sont en blanc
       const buttons = document.querySelectorAll('.cat-btn');
       buttons.forEach(btn => {
         if (btn.getAttribute('data-cat') === cat) {
@@ -485,7 +474,7 @@
       filterCategory(cat);
       const catalogSection = document.getElementById('catalog');
       if (catalogSection) {
-        const topPos = catalogSection.getBoundingClientRect().top + window.pageYOffset - 90;
+        const topPos = catalogSection.getBoundingClientRect().top + window.pageYOffset - 80;
         window.scrollTo({
           top: topPos,
           behavior: 'smooth'
@@ -571,7 +560,7 @@
       } else if (option === 'alger') {
         fee = 400;
       } else {
-        fee = 600; // Pour Alger et toutes les autres wilayas
+        fee = 600;
       }
       
       document.getElementById('cart-shipping-fee').innerText = `${fee} DA`;
@@ -625,7 +614,6 @@
         document.body.removeChild(dummy);
       } catch (e) {}
 
-      // Message d'alerte exact avec accents et redirection vers Instagram
       const confirmOpen = window.confirm("Cher client, votre commande a été copiée. Appuyez sur OK pour aller à la page Instagram et coller la commande sur le message.");
       if (confirmOpen) {
         window.open('https://instagram.com/accessories.by.lym', '_blank');
