@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LYM accessories | Little Details, Big Impact</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            lym: {
+              brown: '#3F241A',
+              darkBrown: '#2C1811',
+              lightBrown: '#5C392B',
+              nude: '#E9D7CD',
+              softNude: '#F7EFEA',
+              cream: '#FAF6F3',
+              accent: '#A67C6D'
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Montserrat"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #FAF6F3;
+      color: #3F241A;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .font-serif-title {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F7EFEA;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #3F241A;
+      border-radius: 4px;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    button, a {
+      cursor: pointer !important;
+    }
+  </style>
+</head>
+<body class="bg-lym-cream text-lym-brown antialiased flex flex-col min-h-screen relative">
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="bg-lym-brown text-lym-nude text-xs sm:text-sm py-2.5 px-4 text-center font-medium tracking-wide flex items-center justify-center gap-2">
+    <span>🎓</span>
+    <span><strong>LIVRAISON GRATUITE</strong> disponible à l'<strong>USTHB (Bab Ezzouar)</strong> &amp; à l'école <strong>ESAA</strong> !</span>
+  </div>
+
+  <!-- HEADER & NAVIGATION -->
+  <header class="sticky top-0 z-30 bg-lym-cream/95 backdrop-blur-md border-b border-lym-nude/60 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo & Brand Name on Single Line (Left) -->
+      <div class="flex items-center gap-3">
+        <!-- Mobile Hamburger Button -->
+        <button onclick="toggleMobileMenu()" class="lg:hidden text-lym-brown text-xl p-1.5 rounded-lg hover:bg-lym-nude/30 cursor-pointer -ml-1" aria-label="Menu Mobile">
+          <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+
+        <a href="#" class="flex items-center gap-3 cursor-pointer">
+          <img src="logo.jpeg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=200&auto=format&fit=crop';" alt="LYM accessories Logo" class="h-11 w-11 sm:h-13 sm:w-13 object-cover rounded-full border-2 border-lym-nude shadow-md shrink-0">
+          <div class="flex flex-col">
+            <span class="font-serif-title font-bold text-sm sm:text-xl tracking-wider uppercase text-lym-brown whitespace-nowrap leading-tight">LYM ACCESSORIES</span>
+            <span class="font-serif-title italic text-[11px] sm:text-xs text-lym-accent tracking-wider leading-none">little details, big impact</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden lg:flex items-center space-x-5 text-xs font-semibold tracking-widest uppercase text-lym-brown">
+        <a href="#hero" class="hover:text-lym-accent transition-colors py-2 uppercase font-semibold cursor-pointer">Accueil</a>
+        <button onclick="scrollToCatalogAndFilter('bagues')" class="hover:text-lym-accent transition-colors py-2 uppercase font-semibold cursor-pointer">Bagues</button>
+        <button onclick="scrollToCatalogAndFilter('colliers')" class="hover:text-lym-accent transition-colors py-2 uppercase font-semibold cursor-pointer">Colliers</button>
+        <button onclick="scrollToCatalogAndFilter('bracelets')" class="hover:text-lym-accent transition-colors py-2 uppercase font-semibold cursor-pointer">Bracelets</button>
+        <button onclick="scrollToCatalogAndFilter('montres')" class="hover:text-lym-accent transition-colors py-2 uppercase font-semibold cursor-pointer">Montres</button>
+        <button onclick="scrollToCatalogAndFilter('packs')" class="hover:text-lym-accent transition-colors py-2 uppercase font-semibold cursor-pointer">Packs (4 pcs)</button>
+      </nav>
+
+      <!-- Header Right Actions & Cart -->
+      <div class="flex items-center gap-2 sm:gap-4">
+        <div class="hidden sm:flex items-center gap-1.5">
+          <a href="https://instagram.com/accessories.by.lym" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 px-3.5 py-1.5 bg-lym-nude/40 hover:bg-lym-nude text-lym-brown text-xs font-medium rounded-full border border-lym-nude cursor-pointer transition-colors" title="Instagram">
+            <i class="fa-brands fa-instagram text-sm text-pink-700"></i>
+            <span>Instagram</span>
+          </a>
+          <a href="https://tiktok.com/@accessories.by.lym" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 px-3.5 py-1.5 bg-lym-nude/40 hover:bg-lym-nude text-lym-brown text-xs font-medium rounded-full border border-lym-nude cursor-pointer transition-colors" title="TikTok">
+            <i class="fa-brands fa-tiktok text-sm text-black"></i>
+            <span>TikTok</span>
+          </a>
+        </div>
+
+        <!-- Cart Button Trigger -->
+        <button id="open-cart-btn" onclick="openCart()" class="relative p-2.5 bg-lym-nude/60 hover:bg-lym-nude text-lym-brown rounded-full transition-all duration-300 shadow-sm flex items-center justify-center cursor-pointer" aria-label="Voir le Panier">
+          <i class="fa-solid fa-bag-shopping text-xl"></i>
+          <span id="cart-counter" class="absolute -top-1 -right-1 bg-lym-brown text-lym-nude text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white">0</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-lym-softNude border-b border-lym-nude/60 px-6 py-4 space-y-3">
+      <a href="#hero" onclick="toggleMobileMenu()" class="block text-sm font-semibold tracking-wider uppercase py-2 border-b border-lym-nude/30 cursor-pointer">Accueil</a>
+      <button onclick="scrollToCatalogAndFilter('all'); toggleMobileMenu()" class="block w-full text-left text-sm font-semibold tracking-wider uppercase py-2 border-b border-lym-nude/30 cursor-pointer">✨ Tout Le Catalogue</button>
+      <button onclick="scrollToCatalogAndFilter('bagues'); toggleMobileMenu()" class="block w-full text-left text-sm font-semibold tracking-wider uppercase py-2 border-b border-lym-nude/30 cursor-pointer">💍 Bagues</button>
+      <button onclick="scrollToCatalogAndFilter('colliers'); toggleMobileMenu()" class="block w-full text-left text-sm font-semibold tracking-wider uppercase py-2 border-b border-lym-nude/30 cursor-pointer">📿 Colliers</button>
+      <button onclick="scrollToCatalogAndFilter('bracelets'); toggleMobileMenu()" class="block w-full text-left text-sm font-semibold tracking-wider uppercase py-2 border-b border-lym-nude/30 cursor-pointer">✨ Bracelets</button>
+      <button onclick="scrollToCatalogAndFilter('montres'); toggleMobileMenu()" class="block w-full text-left text-sm font-semibold tracking-wider uppercase py-2 border-b border-lym-nude/30 cursor-pointer">⌚ Montres</button>
+      <button onclick="scrollToCatalogAndFilter('packs'); toggleMobileMenu()" class="block w-full text-left text-sm font-semibold tracking-wider uppercase py-2 border-b border-lym-nude/30 cursor-pointer">🎁 Packs 4 Pièces</button>
+    </div>
+  </header>
+
+  <!-- HERO BANNER SECTION -->
+  <section id="hero" class="relative w-full bg-lym-brown text-lym-nude overflow-hidden z-10">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 items-center min-h-[480px]">
+      
+      <!-- Left Content -->
+      <div class="md:col-span-7 px-6 py-12 lg:px-12 flex flex-col justify-center space-y-6">
+        <h1 class="font-serif-title italic text-4xl sm:text-5xl lg:text-6xl font-normal leading-snug tracking-wide text-white">
+          « Little details, big impact »
+        </h1>
+
+        <p class="text-xs sm:text-sm text-lym-nude/80 max-w-xl leading-relaxed">
+          Des bijoux élégants et raffinés créés pour sublimer votre allure au quotidien. Profitez de nos collections exclusives de bagues, colliers, bracelets et montres.
+        </p>
+
+        <!-- Student Special Notice Box -->
+        <div class="bg-lym-nude/10 border border-lym-nude/30 rounded-2xl p-4 flex items-center gap-4 max-w-md">
+          <div class="p-3 bg-lym-nude text-lym-brown rounded-xl text-xl flex items-center justify-center shrink-0">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-white">LIVRAISON 0 DA ÉTUDIANTS</h4>
+            <p class="text-xs text-lym-nude/70 mt-0.5">Offre spéciale pour tous les étudiants USTHB &amp; ESAA !</p>
+          </div>
+        </div>
+
+        <div>
+          <a href="#catalog" class="inline-flex items-center gap-3 bg-lym-nude hover:bg-white text-lym-brown font-bold px-7 py-3.5 rounded-full transition-all text-xs uppercase tracking-widest shadow-xl cursor-pointer">
+            <span>Découvrir la collection</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Hero Banner Image (Properly Contained & Optimized) -->
+      <div class="md:col-span-5 p-4 md:p-6 flex items-center justify-center bg-lym-darkBrown/30 border-t md:border-t-0 md:border-l border-lym-nude/10 min-h-[320px] sm:min-h-[400px]">
+        <div class="relative w-full flex items-center justify-center overflow-hidden rounded-2xl border border-lym-nude/30 shadow-2xl bg-[#2C1811] p-2 group">
+          <img src="photo_2026-09-29 15.19.20.jpeg" 
+               onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&auto=format&fit=crop';" 
+               alt="LYM Accessories Showcase" 
+               class="w-full h-auto max-h-[400px] object-contain object-center rounded-xl transition-transform duration-500 group-hover:scale-102 cursor-pointer"
+               onclick="openImageModal(this.src, 'LYM Accessories Showcase')">
+          <button onclick="openImageModal('photo_2026-09-29 15.19.20.jpeg', 'LYM Accessories Showcase')" class="absolute bottom-3 right-3 bg-lym-brown/90 hover:bg-lym-darkBrown text-lym-nude text-[11px] font-medium px-3 py-1.5 rounded-full border border-lym-nude/30 flex items-center gap-1.5 shadow-lg backdrop-blur-md transition-all cursor-pointer">
+            <i class="fa-solid fa-magnifying-glass-plus text-xs"></i>
+            <span>Cliquer pour agrandir</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CATEGORY FILTER BUTTONS BAR -->
+  <section id="catalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-4 w-full relative z-10 scroll-mt-24">
+    <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 text-xs font-bold uppercase tracking-wider">
+      <button data-cat="all" onclick="filterCategory('all')" class="cat-btn bg-lym-brown text-lym-nude border border-lym-brown px-6 py-2.5 rounded-full whitespace-nowrap cursor-pointer transition-all duration-200 shadow-sm">Tout voir</button>
+      <button data-cat="bagues" onclick="filterCategory('bagues')" class="cat-btn bg-white text-lym-brown hover:bg-lym-nude border border-lym-nude/60 px-6 py-2.5 rounded-full whitespace-nowrap cursor-pointer transition-all duration-200">💍 Bagues</button>
+      <button data-cat="colliers" onclick="filterCategory('colliers')" class="cat-btn bg-white text-lym-brown hover:bg-lym-nude border border-lym-nude/60 px-6 py-2.5 rounded-full whitespace-nowrap cursor-pointer transition-all duration-200">📿 Colliers</button>
+      <button data-cat="bracelets" onclick="filterCategory('bracelets')" class="cat-btn bg-white text-lym-brown hover:bg-lym-nude border border-lym-nude/60 px-6 py-2.5 rounded-full whitespace-nowrap cursor-pointer transition-all duration-200">✨ Bracelets</button>
+      <button data-cat="montres" onclick="filterCategory('montres')" class="cat-btn bg-white text-lym-brown hover:bg-lym-nude border border-lym-nude/60 px-6 py-2.5 rounded-full whitespace-nowrap cursor-pointer transition-all duration-200">⌚ Montres</button>
+      <button data-cat="packs" onclick="filterCategory('packs')" class="cat-btn bg-white text-lym-brown hover:bg-lym-nude border border-lym-nude/60 px-6 py-2.5 rounded-full whitespace-nowrap cursor-pointer transition-all duration-200">🎁 Packs (4 PCS)</button>
+    </div>
+  </section>
+
+  <!-- PRODUCTS GRID CATALOGUE -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 flex-1 w-full relative z-10">
+    <div id="products-grid" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+      <!-- Généré par JavaScript -->
+    </div>
+  </main>
+
+  <!-- SHOPPING CART DRAWER -->
+  <div id="cart-drawer" class="hidden fixed inset-0 z-50">
+    <!-- Overlay Backdrop -->
+    <div onclick="closeCart()" class="absolute inset-0 bg-black/60 backdrop-blur-sm cursor-pointer"></div>
+    
+    <!-- Drawer Panel -->
+    <div class="absolute inset-y-0 right-0 max-w-full flex pl-10">
+      <div class="w-screen max-w-md bg-lym-cream shadow-2xl flex flex-col justify-between relative z-10">
+        
+        <!-- Header -->
+        <div class="p-5 bg-lym-brown text-lym-nude flex items-center justify-between border-b border-lym-nude/20">
+          <div class="flex items-center gap-3">
+            <i class="fa-solid fa-bag-shopping text-xl"></i>
+            <h2 class="font-serif-title text-xl font-bold tracking-wider">Mon Panier</h2>
+            <span id="cart-drawer-count" class="bg-lym-nude text-lym-brown text-xs font-extrabold px-2.5 py-0.5 rounded-full">0</span>
+          </div>
+          <button onclick="closeCart()" class="text-lym-nude hover:text-white text-xl p-1 cursor-pointer" aria-label="Fermer Panier">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- Cart Items List Container -->
+        <div id="cart-items-container" class="flex-1 overflow-y-auto p-5 space-y-4 divide-y divide-lym-nude/30">
+          <p class="text-center text-xs text-lym-brown/60 py-8">Votre panier est actuellement vide.</p>
+        </div>
+
+        <!-- Order Summary & Checkout Section -->
+        <div class="p-5 bg-white border-t border-lym-nude/40 space-y-4 shadow-lg">
+          <div class="space-y-1.5 text-xs font-semibold text-lym-brown">
+            <div class="flex justify-between uppercase">
+              <span>Sous-total</span>
+              <span id="cart-subtotal">0 DA</span>
+            </div>
+            <div class="flex justify-between uppercase">
+              <span>Frais de livraison</span>
+              <span id="cart-shipping-fee" class="text-emerald-700 font-bold">0 DA</span>
+            </div>
+            <div class="flex justify-between text-sm sm:text-base font-bold text-lym-brown border-t border-lym-nude/30 pt-2">
+              <span>Total</span>
+              <span id="cart-total" class="font-serif-title text-xl text-lym-brown">0 DA</span>
+            </div>
+          </div>
+
+          <!-- Shipping Options (69 Wilayas of Algeria) -->
+          <div class="space-y-1">
+            <label class="block text-[11px] font-bold uppercase tracking-wider text-lym-brown">Lieu de livraison :</label>
+            <select id="shipping-option" onchange="updateShippingFee()" class="w-full text-xs font-medium border border-lym-nude/60 rounded-xl p-2.5 bg-lym-cream">
+              <optgroup label="Retrait / Gratuit">
+                <option value="usthb">🎓 USTHB (Bab Ezzouar) - GRATUIT (0 DA)</option>
+                <option value="esaa">🎓 École Privée ESAA - GRATUIT (0 DA)</option>
+              </optgroup>
+              <optgroup label="À domicile & Wilayas">
+                <option value="alger">🏠 À domicile (Alger) (+ 400 DA)</option>
+                <option value="wilaya">🚚 Autre Wilaya (+ 600 DA)</option>
+              </optgroup>
+              <optgroup label="Toutes les Wilayas d'Algérie (69 Wilayas)">
+                <option value="w_adrar">01 - Adrar (+ 600 DA)</option>
+                <option value="w_chlef">02 - Chlef (+ 600 DA)</option>
+                <option value="w_laghouat">03 - Laghouat (+ 600 DA)</option>
+                <option value="w_oum_el_bouaghi">04 - Oum El Bouaghi (+ 600 DA)</option>
+                <option value="w_batna">05 - Batna (+ 600 DA)</option>
+                <option value="w_bejaia">06 - Béjaïa (+ 600 DA)</option>
+                <option value="w_biskra">07 - Biskra (+ 600 DA)</option>
+                <option value="w_bechar">08 - Béchar (+ 600 DA)</option>
+                <option value="w_blida">09 - Blida (+ 600 DA)</option>
+                <option value="w_bouira">10 - Bouira (+ 600 DA)</option>
+                <option value="w_tamanrasset">11 - Tamanrasset (+ 600 DA)</option>
+                <option value="w_tebessa">12 - Tébessa (+ 600 DA)</option>
+                <option value="w_tlemcen">13 - Tlemcen (+ 600 DA)</option>
+                <option value="w_tiaret">14 - Tiaret (+ 600 DA)</option>
+                <option value="w_tizi_ouzou">15 - Tizi Ouzou (+ 600 DA)</option>
+                <option value="w_alger">16 - Alger (+ 600 DA)</option>
+                <option value="w_djelfa">17 - Djelfa (+ 600 DA)</option>
+                <option value="w_jijel">18 - Jijel (+ 600 DA)</option>
+                <option value="w_setif">19 - Sétif (+ 600 DA)</option>
+                <option value="w_saida">20 - Saïda (+ 600 DA)</option>
+                <option value="w_skikda">21 - Skikda (+ 600 DA)</option>
+                <option value="w_sidi_bel_abbes">22 - Sidi Bel Abbès (+ 600 DA)</option>
+                <option value="w_annaba">23 - Annaba (+ 600 DA)</option>
+                <option value="w_guelma">24 - Guelma (+ 600 DA)</option>
+                <option value="w_constantine">25 - Constantine (+ 600 DA)</option>
+                <option value="w_medea">26 - Médéa (+ 600 DA)</option>
+                <option value="w_mostaganem">27 - Mostaganem (+ 600 DA)</option>
+                <option value="w_msila">28 - M'Sila (+ 600 DA)</option>
+                <option value="w_mascara">29 - Mascara (+ 600 DA)</option>
+                <option value="w_ouargla">30 - Ouargla (+ 600 DA)</option>
+                <option value="w_oran">31 - Oran (+ 600 DA)</option>
+                <option value="w_el_bayadh">32 - El Bayadh (+ 600 DA)</option>
+                <option value="w_illizi">33 - Illizi (+ 600 DA)</option>
+                <option value="w_bordj_bou_arreridj">34 - Bordj Bou Arréridj (+ 600 DA)</option>
+                <option value="w_boumerdes">35 - Boumerdès (+ 600 DA)</option>
+                <option value="w_el_tarf">36 - El Tarf (+ 600 DA)</option>
+                <option value="w_tindouf">37 - Tindouf (+ 600 DA)</option>
+                <option value="w_tissemsilt">38 - Tissemsilt (+ 600 DA)</option>
+                <option value="w_el_oued">39 - El Oued (+ 600 DA)</option>
+                <option value="w_khenchela">40 - Khenchela (+ 600 DA)</option>
+                <option value="w_souk_ahras">41 - Souk Ahras (+ 600 DA)</option>
+                <option value="w_tipaza">42 - Tipaza (+ 600 DA)</option>
+                <option value="w_mila">43 - Mila (+ 600 DA)</option>
+                <option value="w_ain_defla">44 - Aïn Defla (+ 600 DA)</option>
+                <option value="w_naama">45 - Naâma (+ 600 DA)</option>
+                <option value="w_ain_temouchent">46 - Aïn Témouchent (+ 600 DA)</option>
+                <option value="w_ghardaia">47 - Ghardaïa (+ 600 DA)</option>
+                <option value="w_relizane">48 - Relizane (+ 600 DA)</option>
+                <option value="w_timimoun">49 - Timimoun (+ 600 DA)</option>
+                <option value="w_bordj_badji_mokhtar">50 - Bordj Badji Mokhtar (+ 600 DA)</option>
+                <option value="w_ouled_djellal">51 - Ouled Djellal (+ 600 DA)</option>
+                <option value="w_beni_abbes">52 - Béni Abbès (+ 600 DA)</option>
+                <option value="w_in_salah">53 - In Salah (+ 600 DA)</option>
+                <option value="w_in_guezzam">54 - In Guezzam (+ 600 DA)</option>
+                <option value="w_touggourt">55 - Touggourt (+ 600 DA)</option>
+                <option value="w_djanet">56 - Djanet (+ 600 DA)</option>
+                <option value="w_el_mgtair">57 - El M'Ghair (+ 600 DA)</option>
+                <option value="w_el_meniaa">58 - El Meniaâ (+ 600 DA)</option>
+                <option value="w_aflou">59 - Aflou (+ 600 DA)</option>
+                <option value="w_ain_oussera">60 - Aïn Oussera (+ 600 DA)</option>
+                <option value="w_barika">61 - Barika (+ 600 DA)</option>
+                <option value="w_boussaada">62 - Boussaâda (+ 600 DA)</option>
+                <option value="w_el_eulma">63 - El Eulma (+ 600 DA)</option>
+                <option value="w_kseur">64 - Ksar Chellala (+ 600 DA)</option>
+                <option value="w_messad">65 - Messaâd (+ 600 DA)</option>
+                <option value="w_sig">66 - Sig (+ 600 DA)</option>
+                <option value="w_ksar_el_boukhari">67 - Ksar El Boukhari (+ 600 DA)</option>
+                <option value="w_el_abiodh">68 - El Abiodh Sidi Cheikh (+ 600 DA)</option>
+                <option value="w_bir_el_ater">69 - Bir El Ater (+ 600 DA)</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <!-- Customer Form -->
+          <div class="space-y-2">
+            <input type="text" id="client-name" placeholder="Votre Nom & Prénom" class="w-full text-xs border border-lym-nude/60 rounded-xl p-2.5 bg-lym-cream">
+            <input type="tel" id="client-phone" placeholder="Numéro de Téléphone" class="w-full text-xs border border-lym-nude/60 rounded-xl p-2.5 bg-lym-cream">
+          </div>
+
+          <!-- Submit Order Button (Instagram Only) -->
+          <div class="pt-1">
+            <button onclick="submitOrder('instagram')" class="w-full bg-pink-700 hover:bg-pink-800 text-white font-bold py-3.5 rounded-xl shadow-md text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer transition-all">
+              <i class="fa-brands fa-instagram text-base"></i>
+              <span>Commander via Instagram</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION OVERLAY -->
+  <div id="toast-notification" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+    <div class="bg-lym-brown text-lym-nude px-5 py-3.5 rounded-2xl shadow-xl flex items-center space-x-3 border border-lym-nude/30">
+      <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+      <span id="toast-message" class="text-xs font-medium">Message</span>
+    </div>
+  </div>
+
+  <!-- IMAGE LIGHTBOX MODAL -->
+  <div id="image-modal" onclick="closeImageModal()" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md transition-all cursor-pointer">
+    <div class="relative max-w-4xl w-full max-h-[90vh] flex flex-col items-center justify-center" onclick="event.stopPropagation()">
+      <button onclick="closeImageModal()" class="absolute -top-10 right-0 text-white hover:text-lym-nude text-2xl p-2 cursor-pointer transition-colors" aria-label="Fermer">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <img id="modal-img" src="" alt="Agrandissement" class="max-w-full max-h-[85vh] object-contain rounded-2xl shadow-2xl border border-lym-nude/30">
+      <p id="modal-caption" class="text-lym-nude font-serif-title text-sm sm:text-base mt-3 italic tracking-wide text-center"></p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-lym-brown text-lym-nude py-10 border-t border-lym-nude/20 text-xs relative z-10">
+    <div class="max-w-7xl mx-auto px-4 text-center space-y-3">
+      <p class="font-serif-title font-bold text-lg tracking-widest uppercase text-white">LYM ACCESSORIES</p>
+      <p class="font-serif-title italic text-lym-nude/80">« little details, big impact »</p>
+      <div class="flex justify-center items-center gap-6 py-2">
+        <a href="https://instagram.com/accessories.by.lym" target="_blank" class="hover:text-white transition-colors flex items-center gap-2 cursor-pointer">
+          <i class="fa-brands fa-instagram text-base"></i>
+          <span>Instagram</span>
+        </a>
+        <a href="https://tiktok.com/@accessories.by.lym" target="_blank" class="hover:text-white transition-colors flex items-center gap-2 cursor-pointer">
+          <i class="fa-brands fa-tiktok text-base"></i>
+          <span>TikTok</span>
+        </a>
+      </div>
+      <p class="text-lym-nude/60">© LYM Accessories - Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT APP LOGIC -->
+  <script>
+    const products = [
+      // BAGUES
+      { id: 1, name: "Bague Strass Papillon Gold", category: "bagues", price: 1200, image: "bague1.jpeg", fallback: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500&auto=format&fit=crop" },
+      { id: 2, name: "Bague Solitaire & Feuillage", category: "bagues", price: 1500, image: "bague2.jpeg", fallback: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=500&auto=format&fit=crop" },
+      { id: 3, name: "Bague Royale Élégance", category: "bagues", price: 2500, image: "bague3_2.jpeg", fallback: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500&auto=format&fit=crop" },
+      { id: 4, name: "Bague Solitaire Éclat", category: "bagues", price: 2800, image: "bague4_2.jpeg", fallback: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=500&auto=format&fit=crop" },
+
+      // COLLIERS
+      { id: 5, name: "Collier Cœur Entrelacé Gold", category: "colliers", price: 2200, image: "collier1.jpeg", fallback: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&auto=format&fit=crop" },
+      { id: 6, name: "Collier Pendentif Feuille", category: "colliers", price: 2400, image: "collier2.jpeg", fallback: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=500&auto=format&fit=crop" },
+      { id: 7, name: "Collier Cascade Dorée", category: "colliers", price: 4200, image: "collier3.jpeg", fallback: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&auto=format&fit=crop" },
+      { id: 8, name: "Collier Pendentif Prestige", category: "colliers", price: 3900, image: "collier4.jpeg", fallback: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=500&auto=format&fit=crop" },
+
+      // BRACELETS
+      { id: 9, name: "Bracelet Papillons & Nacre", category: "bracelets", price: 1800, image: "braclet1.jpeg", fallback: "https://images.unsplash.com/photo-1611591475878-3a1390f77977?w=500&auto=format&fit=crop" },
+      { id: 10, name: "Bracelet Triple Chaîne Papillon", category: "bracelets", price: 2000, image: "braclet2.jpeg", fallback: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&auto=format&fit=crop" },
+      { id: 11, name: "Bracelet Chaîne Luxe", category: "bracelets", price: 3100, image: "braclet3_2.jpeg", fallback: "https://images.unsplash.com/photo-1611591475878-3a1390f77977?w=500&auto=format&fit=crop" },
+      { id: 12, name: "Bracelet Charmes Nude", category: "bracelets", price: 2900, image: "braclet4_2.jpeg", fallback: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&auto=format&fit=crop" },
+
+      // MONTRES
+      { id: 13, name: "Montre Céramique & Bracelet Fleur", category: "montres", price: 3800, image: "montre1.jpeg", fallback: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=500&auto=format&fit=crop" },
+      { id: 14, name: "Montre Boîtier Carré & Bracelets", category: "montres", price: 4200, image: "montre2.jpeg", fallback: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=500&auto=format&fit=crop" },
+      { id: 15, name: "Montre Minimaliste Gold", category: "montres", price: 5800, image: "montre4.jpeg", fallback: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=500&auto=format&fit=crop" },
+
+      // PACKS
+      { id: 16, name: "Pack Coffret Duo Romance", category: "packs", price: 4500, image: "pack1.jpeg", fallback: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=500&auto=format&fit=crop" },
+      { id: 17, name: "Pack Royal Collection Complete", category: "packs", price: 5200, image: "pack2.jpeg", fallback: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500&auto=format&fit=crop" },
+      { id: 18, name: "Pack Luxe Coffret Velours", category: "packs", price: 5500, image: "pack3.jpeg", fallback: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=500&auto=format&fit=crop" },
+      { id: 19, name: "Pack YSL & Trèfle Rose Coffret", category: "packs", price: 4900, image: "pack4.jpeg", fallback: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500&auto=format&fit=crop" }
+    ];
+
+    let cart = [];
+
+    function renderProducts(filter = 'all') {
+      const container = document.getElementById('products-grid');
+      container.innerHTML = '';
+      
+      const filtered = filter === 'all' ? products : products.filter(p => p.category === filter);
+
+      filtered.forEach(product => {
+        const card = document.createElement('div');
+        card.className = "bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md border border-lym-nude/40 flex flex-col justify-between group";
+        card.innerHTML = `
+          <div class="relative aspect-square overflow-hidden bg-lym-cream">
+            <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='${product.fallback}'">
+            <span class="absolute top-2.5 left-2.5 bg-lym-brown/80 text-lym-nude text-[9px] font-bold px-2.5 py-1 rounded-full uppercase tracking-widest backdrop-blur-md">${product.category}</span>
+          </div>
+          <div class="p-4 flex-1 flex flex-col justify-between space-y-3">
+            <div>
+              <h3 class="font-serif-title text-sm sm:text-base font-bold text-lym-brown line-clamp-1">${product.name}</h3>
+              <p class="text-xs sm:text-sm font-extrabold text-lym-accent mt-0.5">${product.price} DA</p>
+            </div>
+            <button onclick="addToCart(${product.id})" class="w-full bg-lym-brown text-lym-nude hover:bg-lym-darkBrown font-bold py-2.5 rounded-xl transition-all text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm cursor-pointer active:scale-95">
+              <i class="fa-solid fa-cart-plus"></i>
+              <span>Ajouter</span>
+            </button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function filterCategory(cat) {
+      renderProducts(cat);
+
+      // Met à jour les styles des boutons de filtre : le bouton actif est marron, les autres (y compris Tout voir) sont en blanc
+      const buttons = document.querySelectorAll('.cat-btn');
+      buttons.forEach(btn => {
+        if (btn.getAttribute('data-cat') === cat) {
+          btn.className = "cat-btn bg-lym-brown text-lym-nude border border-lym-brown px-6 py-2.5 rounded-full whitespace-nowrap cursor-pointer transition-all duration-200 shadow-sm";
+        } else {
+          btn.className = "cat-btn bg-white text-lym-brown hover:bg-lym-nude border border-lym-nude/60 px-6 py-2.5 rounded-full whitespace-nowrap cursor-pointer transition-all duration-200";
+        }
+      });
+    }
+
+    function scrollToCatalogAndFilter(cat) {
+      filterCategory(cat);
+      const catalogSection = document.getElementById('catalog');
+      if (catalogSection) {
+        const topPos = catalogSection.getBoundingClientRect().top + window.pageYOffset - 90;
+        window.scrollTo({
+          top: topPos,
+          behavior: 'smooth'
+        });
+      }
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+
+    function addToCart(id) {
+      const product = products.find(p => p.id === id);
+      const existing = cart.find(item => item.id === id);
+      
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ ...product, quantity: 1 });
+      }
+      
+      updateCart();
+      openCart();
+      showNotification(`"${product.name}" ajouté au panier !`);
+    }
+
+    function updateCart() {
+      const itemsContainer = document.getElementById('cart-items-container');
+      itemsContainer.innerHTML = '';
+      let totalItems = 0;
+      let subtotal = 0;
+
+      if (cart.length === 0) {
+        itemsContainer.innerHTML = '<p class="text-center text-xs text-lym-brown/60 py-8">Votre panier est vide.</p>';
+      } else {
+        cart.forEach(item => {
+          totalItems += item.quantity;
+          subtotal += item.price * item.quantity;
+          
+          const el = document.createElement('div');
+          el.className = "flex items-center gap-3 pt-3";
+          el.innerHTML = `
+            <img src="${item.image}" class="w-12 h-12 rounded-xl object-cover border border-lym-nude/60" onerror="this.src='${item.fallback}'">
+            <div class="flex-1">
+              <h4 class="text-xs font-bold text-lym-brown line-clamp-1">${item.name}</h4>
+              <p class="text-xs text-lym-accent font-semibold">${item.price} DA</p>
+            </div>
+            <div class="flex items-center gap-2 bg-lym-cream border border-lym-nude/60 rounded-lg px-2 py-1">
+              <button onclick="changeQty(${item.id}, -1)" class="text-xs font-bold text-lym-brown px-1 cursor-pointer">-</button>
+              <span class="text-xs font-bold text-lym-brown">${item.quantity}</span>
+              <button onclick="changeQty(${item.id}, 1)" class="text-xs font-bold text-lym-brown px-1 cursor-pointer">+</button>
+            </div>
+          `;
+          itemsContainer.appendChild(el);
+        });
+      }
+
+      document.getElementById('cart-counter').innerText = totalItems;
+      document.getElementById('cart-drawer-count').innerText = totalItems;
+      document.getElementById('cart-subtotal').innerText = `${subtotal} DA`;
+      updateShippingFee();
+    }
+
+    function changeQty(id, delta) {
+      const item = cart.find(i => i.id === id);
+      if (item) {
+        item.quantity += delta;
+        if (item.quantity <= 0) {
+          cart = cart.filter(i => i.id !== id);
+        }
+      }
+      updateCart();
+    }
+
+    function updateShippingFee() {
+      const option = document.getElementById('shipping-option').value;
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      let fee = 0;
+      
+      if (option === 'usthb' || option === 'esaa') {
+        fee = 0;
+      } else if (option === 'alger') {
+        fee = 400;
+      } else {
+        fee = 600; // Pour Alger et toutes les autres wilayas
+      }
+      
+      document.getElementById('cart-shipping-fee').innerText = `${fee} DA`;
+      document.getElementById('cart-total').innerText = `${subtotal + fee} DA`;
+    }
+
+    function openCart() {
+      document.getElementById('cart-drawer').classList.remove('hidden');
+    }
+
+    function closeCart() {
+      document.getElementById('cart-drawer').classList.add('hidden');
+    }
+
+    function showNotification(msg) {
+      const toast = document.getElementById('toast-notification');
+      const toastText = document.getElementById('toast-message');
+      if (toast && toastText) {
+        toastText.innerText = msg;
+        toast.classList.remove('translate-y-20', 'opacity-0');
+        toast.classList.add('translate-y-0', 'opacity-100');
+        setTimeout(() => {
+          toast.classList.remove('translate-y-0', 'opacity-100');
+          toast.classList.add('translate-y-20', 'opacity-0');
+        }, 3500);
+      }
+    }
+
+    function submitOrder(platform) {
+      if (cart.length === 0) return showNotification("Votre panier est vide !");
+      
+      const name = document.getElementById('client-name').value;
+      const phone = document.getElementById('client-phone').value;
+      const shipping = document.getElementById('shipping-option').selectedOptions[0].text;
+
+      if (!name || !phone) return showNotification("Veuillez remplir votre nom et numéro de téléphone.");
+
+      let msg = `Bonjour LYM ACCESSORIES, voici ma commande :\n\n`;
+      cart.forEach(i => {
+        msg += `• ${i.name} (x${i.quantity}) : ${i.price * i.quantity} DA\n`;
+      });
+      
+      msg += `\n📍 Mode de livraison : ${shipping}\n👤 Nom : ${name}\n📞 Téléphone : ${phone}\n💰 Total : ${document.getElementById('cart-total').innerText}`;
+
+      try {
+        const dummy = document.createElement("textarea");
+        document.body.appendChild(dummy);
+        dummy.value = msg;
+        dummy.select();
+        document.execCommand("copy");
+        document.body.removeChild(dummy);
+      } catch (e) {}
+
+      // Message d'alerte exact avec accents et redirection vers Instagram
+      const confirmOpen = window.confirm("Cher client, votre commande a été copiée. Appuyez sur OK pour aller à la page Instagram et coller la commande sur le message.");
+      if (confirmOpen) {
+        window.open('https://instagram.com/accessories.by.lym', '_blank');
+      }
+    }
+
+    function openImageModal(src, caption = '') {
+      const modal = document.getElementById('image-modal');
+      const img = document.getElementById('modal-img');
+      const cap = document.getElementById('modal-caption');
+      if (modal && img) {
+        img.src = src;
+        cap.innerText = caption;
+        modal.classList.remove('hidden');
+      }
+    }
+
+    function closeImageModal() {
+      const modal = document.getElementById('image-modal');
+      if (modal) {
+        modal.classList.add('hidden');
+      }
+    }
+
+    renderProducts();
+  </script>
+</body>
+</html>
